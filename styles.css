@@ -1,0 +1,357 @@
+
+/* =====================================
+   PALETA BEIGE Y CAFE - MINIMALISTA
+===================================== */
+
+:root {
+    --cafe-oscuro: #72543E;
+    --cafe-medio: #A17C5A;
+    --beige: #E8DCCB;
+    --fondo: #F7F0E5;
+    --blanco: #FFFCF7;
+    --texto: #44372D;
+    --gris: #8A8178;
+    --verde: #66836A;
+    --rojo: #B65D55;
+    --borde: #E5D8C8;
+}
+
+/* CONFIGURACION GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    background-color: var(--cafe-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 32px 20px;
+}
+
+.encabezado h1 {
+    font-size: 29px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.encabezado p {
+    color: #EDE1D2;
+    font-size: 14px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.contenedor {
+    width: 92%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+/* PANELES */
+
+.panel {
+    background-color: var(--blanco);
+    padding: 27px;
+    margin-bottom: 25px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+}
+
+.panel h2 {
+    color: var(--cafe-oscuro);
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+/* FORMULARIO */
+
+#formulario-producto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 19px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.grupo-campo label {
+    color: var(--texto);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.grupo-campo input,
+.grupo-campo select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borde);
+    border-radius: 7px;
+    background-color: #FFFEFC;
+    color: var(--texto);
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.grupo-campo input:focus,
+.grupo-campo select:focus {
+    outline: none;
+    border-color: var(--cafe-medio);
+}
+
+.grupo-campo input::placeholder {
+    color: #B3A69A;
+}
+
+/* BOTON AGREGAR */
+
+.boton-agregar {
+    grid-column: 1 / -1;
+    padding: 13px;
+    background-color: var(--cafe-oscuro);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.boton-agregar:hover {
+    background-color: var(--cafe-medio);
+}
+
+/* MENSAJE DE ERROR */
+
+.mensaje-error {
+    grid-column: 1 / -1;
+    color: var(--rojo);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* INDICADORES */
+
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 17px;
+    margin-bottom: 25px;
+}
+
+.tarjeta {
+    background-color: var(--blanco);
+    padding: 24px 15px;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.tarjeta h3 {
+    color: var(--gris);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tarjeta p {
+    color: var(--cafe-oscuro);
+    font-size: 27px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* ENCABEZADO DE INVENTARIO */
+
+.encabezado-inventario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.encabezado-inventario h2 {
+    margin-bottom: 0;
+}
+
+.encabezado-inventario .grupo-campo {
+    min-width: 230px;
+}
+
+/* TABLA */
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #EDE3D5;
+    color: var(--cafe-oscuro);
+}
+
+th {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+th,
+td {
+    padding: 14px 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--borde);
+}
+
+tbody tr {
+    background-color: var(--blanco);
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+    background-color: #F8F1E8;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ESTADOS */
+
+.fila-agotada {
+    background-color: #F9EEEE;
+}
+
+.estado-disponible {
+    color: var(--verde);
+    font-weight: 600;
+}
+
+.estado-agotado {
+    color: var(--rojo);
+    font-weight: 600;
+}
+
+/* BOTONES DE ACCIONES */
+
+.btn-estado,
+.btn-eliminar {
+    border: none;
+    padding: 8px 11px;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 3px;
+    transition: opacity 0.2s;
+}
+
+.btn-estado {
+    background-color: var(--cafe-medio);
+}
+
+.btn-eliminar {
+    background-color: var(--rojo);
+}
+
+.btn-estado:hover,
+.btn-eliminar:hover {
+    opacity: 0.8;
+}
+
+/* MENSAJE SIN RESULTADOS */
+
+.mensaje-vacio {
+    text-align: center;
+    padding: 25px;
+    color: var(--gris);
+    font-size: 14px;
+}
+
+/* PIE DE PAGINA */
+
+footer {
+    background-color: var(--cafe-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 13px;
+}
+
+/* DISEÑO RESPONSIVE */
+
+@media (max-width: 850px) {
+    .indicadores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .contenedor {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .encabezado h1 {
+        font-size: 24px;
+    }
+
+    #formulario-producto {
+        grid-template-columns: 1fr;
+    }
+
+    .indicadores {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .tarjeta {
+        padding: 18px 10px;
+    }
+
+    .tarjeta p {
+        font-size: 23px;
+    }
+
+    .encabezado-inventario {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .encabezado-inventario .grupo-campo {
+        min-width: 100%;
+    }
+
+    .panel {
+        padding: 17px;
+    }
+
+    .panel h2 {
+        font-size: 19px;
+    }
+}
